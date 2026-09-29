@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensação de Estagnação - Organizador de Rotinas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .content-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-hover);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .btn-back:hover {
+            transform: translateX(-5px);
+        }
+        .figure-container {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #0d1322;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .figure-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .figure-caption {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+        }
+        .section-title {
+            color: var(--accent-hover);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        p {
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        .metric-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .metric-card h3 {
+            font-size: 1.8rem;
+            color: var(--accent-hover);
+            margin-bottom: 0.3rem;
+        }
+        .metric-card p {
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">&larr; Voltar ao Painel Principal</a>
+
+        <header class="header" style="text-align: left; margin-bottom: 1.5rem;">
+            <span class="badge">Aprofundamento Módulo 06</span>
+            <h1>Sensação de <span class="highlight">Estagnação</span></h1>
+            <p>Substitua a falsa percepção de falta de avanço por métricas visuais de progresso contínuo.</p>
+        </header>
+
+        <main class="content-box">
+            <p>Trabalhar arduamente e sentir que "não saiu do lugar" é consequência direta da falta de rastreamento claro. O cérebro esquece rapidamente as vitórias operacionais diárias se elas não forem devidamente registradas em um histórico palpável.</p>
+
+            <!-- FIGURA 6: GRÁFICO DE EVOLUÇÃO / ACOMPANHAMENTO -->
+            <div class="figure-container">
+                <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="600" height="180" fill="#0f172a" rx="10"/>
+                    <!-- Eixos -->
+                    <line x1="50" y1="140" x2="550" y2="140" stroke="#334155" stroke-width="2"/>
+                    <line x1="50" y1="20" x2="50" y2="140" stroke="#334155" stroke-width="2"/>
+                    <!-- Curva de Progresso -->
+                    <path d="M 50 130 Q 200 120 300 70 T 550 30" fill="none" stroke="#6366f1" stroke-width="4"/>
+                    <!-- Pontos de Registro -->
+                    <circle cx="180" cy="115" r="5" fill="#818cf8"/>
+                    <circle cx="300" cy="70" r="5" fill="#818cf8"/>
+                    <circle cx="450" cy="42" r="5" fill="#818cf8"/>
+                    <text x="500" y="25" fill="#818cf8" font-size="11" font-weight="bold">Progresso Real</text>
+                </svg>
+                <div class="figure-caption">Figura 6.1: O acúmulo de pequenas entregas diárias forma uma curva de avanço exponencial.</div>
+            </div>
+
+            <h2 class="section-title">Acompanhamento e Registro de Vitórias</h2>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>100%</h3>
+                    <p>Clareza nas Metas da Semana</p>
+                </div>
+                <div class="metric-card">
+                    <h3>15 min</h3>
+                    <p>Revisão Semanal de Desempenho</p>
+                </div>
+                <div class="metric-card">
+                    <h3>+30%</h3>
+                    <p>Aumento da Retenção Registrada</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Como Montar seu Histórico de Progresso</h2>
+            <p>Siga estes passos simples para ter prova visual constante do seu desenvolvimento:</p>
+            <ul style="color: var(--text-muted); line-height: 1.8; margin-left: 1.5rem;">
+                <li><strong>Checklist de Conclusão:</strong> Utilize painéis de acompanhamento visual (Kamban ou aplicativos de notas) marcando com cores chamativas o que já foi finalizado.</li>
+                <li><strong>Diário de Conquistas:</strong> Ao final da sexta-feira, anote pelo menos 3 avanços concretos alcançados nos estudos e no trabalho durante aquela semana.</li>
+                <li><strong>Avaliação de Correção de Rota:</strong> Se algo planejado não deu certo, registre como aprendizado e ajuste o planejamento da semana seguinte sem culpa.</li>
+            </ul>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Organizador de Rotinas | Ana Luiza Santini. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles;
+
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 70; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    z: Math.random() * width,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, width, height);
+            let cx = width / 2;
+            let cy = height / 2;
+            for (let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                p.z -= 0.8;
+                if (p.z <= 0) {
+                    p.z = width;
+                    p.x = Math.random() * width;
+                    p.y = Math.random() * height;
+                }
+                let k = 252 / p.z;
+                let px = (p.x - cx) * k + cx;
+                let py = (p.y - cy) * k + cy;
+                if (px >= 0 && px <= width && py >= 0 && py <= height) {
+                    let alpha = (1 - p.z / width);
+                    ctx.beginPath();
+                    ctx.arc(px, py, p.size * k, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(99, 102, 241, ${alpha})`;
+                    ctx.fill();
+                }
+            }
+            requestAnimationFrame(drawParticles);
+        }
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        drawParticles();
+    </script>
+</body>
+</html>

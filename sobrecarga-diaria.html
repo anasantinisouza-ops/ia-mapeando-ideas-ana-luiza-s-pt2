@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito "Sobrecarga Diária" - Organizador de Rotinas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .content-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-hover);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .btn-back:hover {
+            transform: translateX(-5px);
+        }
+        .figure-container {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #0d1322;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .figure-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .figure-caption {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+        }
+        .section-title {
+            color: var(--accent-hover);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        p {
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .step-list {
+            list-style: none;
+            counter-reset: step-counter;
+            margin: 1.5rem 0;
+        }
+        .step-list li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+        }
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">&larr; Voltar ao Painel Principal</a>
+
+        <header class="header" style="text-align: left; margin-bottom: 1.5rem;">
+            <span class="badge">Aprofundamento Módulo 01</span>
+            <h1>Efeito <span class="highlight">"Sobrecarga Diária"</span></h1>
+            <p>Compreenda a fundo a dinâmica da fadiga cognitiva por excesso de demandas e como reestruturar sua capacidade de entrega.</p>
+        </header>
+
+        <main class="content-box">
+            <p>O <strong>Efeito "Sobrecarga Diária"</strong> ocorre quando o volume de entradas de informação e tarefas excede drasticamente a capacidade de processamento do cérebro humano em um determinado intervalo de tempo. Para estudantes que também trabalham, essa condição torna-se crônica devido à transição contínua entre responsabilidades profissionais e acadêmicas.</p>
+
+            <!-- FIGURA 1: SVG ILUSTRATIVO DE SOBRECARGA -->
+            <div class="figure-container">
+                <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="600" height="200" fill="#0f172a" rx="10"/>
+                    <!-- Barra de Capacidade -->
+                    <rect x="50" y="80" width="500" height="30" fill="#1e293b" rx="15" stroke="#334155" stroke-width="2"/>
+                    <!-- Nível Normal -->
+                    <rect x="50" y="80" width="300" height="30" fill="#6366f1" rx="15"/>
+                    <!-- Nível de Sobrecarga -->
+                    <rect x="350" y="80" width="200" height="30" fill="#ef4444" opacity="0.8" rx="0"/>
+                    <!-- Alerta -->
+                    <text x="300" y="50" fill="#f8fafc" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="bold">Limite de Processamento Cognitivo Atropelado (160%)</text>
+                    <text x="200" y="100" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">Capacidade Útil (Trabalho/Estudo)</text>
+                    <text x="450" y="100" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">SOBRECARGA / RENEGADOS</text>
+                    <!-- Ícone de Atenção -->
+                    <path d="M 540 60 L 560 95 L 520 95 Z" fill="#f59e0b" />
+                    <text x="540" y="90" fill="#000" font-weight="bold" font-size="12" text-anchor="middle">!</text>
+                </svg>
+                <div class="figure-caption">Figura 1.1: Ilustração da extrapolação do limite cognitivo quando acumulamos tarefas sem filtragem.</div>
+            </div>
+
+            <h2 class="section-title">As Origens Psicológicas da Sobrecarga</h2>
+            <p>Quando nos expomos a múltiplas fontes de cobrança simultâneas, ativamos o córtex pré-frontal além do seu limite sustentável. Isso resulta na incapacidade de tomar decisões simples, fenômeno conhecido como <em>Fadiga de Decisão</em>.</p>
+
+            <div class="highlight-box">
+                <strong>Principais Sintomas Identificados:</strong>
+                <ul style="margin-top: 0.5rem; margin-left: 1.2rem; color: var(--text-main);">
+                    <li>Sensação constante de afogamento e incapacidade de priorizar.</li>
+                    <li>Revisão repetida da mesma lista de tarefas sem iniciar nenhuma.</li>
+                    <li>Erros operacionais bobos tanto no trabalho quanto nos testes escolares.</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title">Plano de Ação e Soluções Estruturadas</h2>
+            <p>Para combater esse efeito de maneira definitiva, utilize as estratégias avançadas a seguir:</p>
+
+            <ol class="step-list">
+                <li>
+                    <strong>Implementação de Timeblocking Severo:</strong> Divida o seu dia em blocos temáticos fixos. Por exemplo: 08:00 às 12:00 (Trabalho Operacional), 13:30 às 17:30 (Trabalho Estratégico), 19:00 às 21:30 (Estudos Teóricos). Não misture os blocos.
+                </li>
+                <li>
+                    <strong>Filtragem e Regra dos 3 Pilares:</strong> Liste todas as pendências da semana e extraia apenas as 3 tarefas que realmente geram impacto substancial. Todo o restante deve ser agendado para momentos de baixa demanda ou descartado.
+                </li>
+                <li>
+                    <strong>Criação de Intervalos de Descompressão:</strong> Entre uma troca de contexto (ex: término da jornada de trabalho e início das aulas/estudo individual), insira um intervalo de 15 a 30 minutos sem telas.
+                </li>
+            </ol>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Organizador de Rotinas | Ana Luiza Santini. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles;
+
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 70; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    z: Math.random() * width,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, width, height);
+            let cx = width / 2;
+            let cy = height / 2;
+            for (let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                p.z -= 0.8;
+                if (p.z <= 0) {
+                    p.z = width;
+                    p.x = Math.random() * width;
+                    p.y = Math.random() * height;
+                }
+                let k = 252 / p.z;
+                let px = (p.x - cx) * k + cx;
+                let py = (p.y - cy) * k + cy;
+                if (px >= 0 && px <= width && py >= 0 && py <= height) {
+                    let alpha = (1 - p.z / width);
+                    ctx.beginPath();
+                    ctx.arc(px, py, p.size * k, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(99, 102, 241, ${alpha})`;
+                    ctx.fill();
+                }
+            }
+            requestAnimationFrame(drawParticles);
+        }
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        drawParticles();
+    </script>
+</body>
+</html>

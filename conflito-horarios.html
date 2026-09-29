@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conflito Trabalho x Estudo - Organizador de Rotinas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .content-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-hover);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .btn-back:hover {
+            transform: translateX(-5px);
+        }
+        .figure-container {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #0d1322;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .figure-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .figure-caption {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+        }
+        .section-title {
+            color: var(--accent-hover);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        p {
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .time-timeline {
+            border-left: 2px solid var(--accent);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .time-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .time-item::before {
+            content: '';
+            position: absolute;
+            left: -1.95rem;
+            top: 0.3rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-hover);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">&larr; Voltar ao Painel Principal</a>
+
+        <header class="header" style="text-align: left; margin-bottom: 1.5rem;">
+            <span class="badge">Aprofundamento Módulo 05</span>
+            <h1>Conflito de Horários <span class="highlight">Trabalho x Estudo</span></h1>
+            <p>Estratégias de adaptação de agenda e estudo fracionado para evitar choque de rotinas.</p>
+        </header>
+
+        <main class="content-box">
+            <p>O maior desafio de quem concilia carreira e vida acadêmica são as demandas imprevistas no expediente do trabalho que frequentemente atropelam os horários programados para dedicação aos estudos.</p>
+
+            <!-- FIGURA 5: TIMELINE COM BUFFERS -->
+            <div class="figure-container">
+                <svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="600" height="160" fill="#0f172a" rx="10"/>
+                    <!-- Bloco Trabalho -->
+                    <rect x="30" y="60" width="220" height="40" fill="#1e293b" stroke="#334155" rx="6"/>
+                    <text x="140" y="85" fill="#f8fafc" font-size="12" text-anchor="middle">Jornada de Trabalho</text>
+                    
+                    <!-- Margem de Segurança / Buffer -->
+                    <rect x="260" y="60" width="80" height="40" fill="#f59e0b" opacity="0.3" stroke="#f59e0b" stroke-dasharray="4,4" rx="6"/>
+                    <text x="300" y="85" fill="#f59e0b" font-size="11" text-anchor="middle">Buffer (30m)</text>
+
+                    <!-- Bloco Estudo -->
+                    <rect x="350" y="60" width="220" height="40" fill="#6366f1" rx="6"/>
+                    <text x="460" y="85" fill="#ffffff" font-size="12" text-anchor="middle">Sessão de Estudos</text>
+                </svg>
+                <div class="figure-caption">Figura 5.1: Inclusão de blocos amortecedores (buffers) para impedir o impacto de imprevistos do expediente.</div>
+            </div>
+
+            <h2 class="section-title">Como Aplicar o Estudo Fracionado</h2>
+            <p>Aproveite os chamados "micro-momentos" ao longo do seu dia para manter o aprendizado ativo sem demandar longos blocos contínuos:</p>
+
+            <div class="time-timeline">
+                <div class="time-item">
+                    <h4 style="color: var(--text-main);">Deslocamento / Transporte (20-30 min)</h4>
+                    <p>Escute podcasts educativos ou resumos em áudio sobre os temas da faculdade.</p>
+                </div>
+                <div class="time-item">
+                    <h4 style="color: var(--text-main);">Pausa do Almoço (15 min)</h4>
+                    <p>Faça a resolução de 5 a 10 flashcards ou questões de fixação rápida pelo celular.</p>
+                </div>
+                <div class="time-item">
+                    <h4 style="color: var(--text-main);">Encerramento da Noite (45 min)</h4>
+                    <p>Utilize para leitura mais profunda e elaboração de resumos sintéticos sem pressão do relógio.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Definição de Limites Profissionais</h2>
+            <p>Comunique claramente à sua equipe ou gestores sobre seus horários de compromisso escolar/universitário, evitando a aceitação passiva de reuniões marcadas de última hora após o expediente regular.</p>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Organizador de Rotinas | Ana Luiza Santini. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles;
+
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 70; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    z: Math.random() * width,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, width, height);
+            let cx = width / 2;
+            let cy = height / 2;
+            for (let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                p.z -= 0.8;
+                if (p.z <= 0) {
+                    p.z = width;
+                    p.x = Math.random() * width;
+                    p.y = Math.random() * height;
+                }
+                let k = 252 / p.z;
+                let px = (p.x - cx) * k + cx;
+                let py = (p.y - cy) * k + cy;
+                if (px >= 0 && px <= width && py >= 0 && py <= height) {
+                    let alpha = (1 - p.z / width);
+                    ctx.beginPath();
+                    ctx.arc(px, py, p.size * k, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(99, 102, 241, ${alpha})`;
+                    ctx.fill();
+                }
+            }
+            requestAnimationFrame(drawParticles);
+        }
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        drawParticles();
+    </script>
+</body>
+</html>

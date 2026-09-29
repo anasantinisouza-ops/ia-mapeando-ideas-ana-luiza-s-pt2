@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procrastinação & Falta de Foco - Organizador de Rotinas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .content-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-hover);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .btn-back:hover {
+            transform: translateX(-5px);
+        }
+        .figure-container {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #0d1322;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .figure-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .figure-caption {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+        }
+        .section-title {
+            color: var(--accent-hover);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        p {
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        @media (max-width: 600px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+        .card-inner {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">&larr; Voltar ao Painel Principal</a>
+
+        <header class="header" style="text-align: left; margin-bottom: 1.5rem;">
+            <span class="badge">Aprofundamento Módulo 02</span>
+            <h1>Procrastinação & <span class="highlight">Falta de Foco</span></h1>
+            <p>Aprenda como quebrar o ciclo de adiamento constante e construa hiperfoco em suas sessões diárias.</p>
+        </header>
+
+        <main class="content-box">
+            <p>A procrastinação não é um problema de preguiça ou má gestão de tempo, mas sim de <strong>regulação emocional</strong>. Diante de uma tarefa percebida como complexa, chata ou intimidadora, o cérebro busca refúgio imediato em fontes rápidas de dopamina, como redes sociais e notificações de mensagens.</p>
+
+            <!-- FIGURA 2: CICLO DA PROCRASTINAÇÃO -->
+            <div class="figure-container">
+                <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="600" height="220" fill="#0f172a" rx="10"/>
+                    <!-- Ciclo -->
+                    <circle cx="150" cy="110" r="45" fill="none" stroke="#6366f1" stroke-width="4" stroke-dasharray="6,6"/>
+                    <text x="150" y="115" fill="#f8fafc" font-size="12" text-anchor="middle">Tarefa Difícil</text>
+
+                    <path d="M 210 110 L 260 110" stroke="#ef4444" stroke-width="3" marker-end="url(#arrow)"/>
+                    
+                    <rect x="270" y="85" width="120" height="50" fill="#1e293b" stroke="#ef4444" rx="8"/>
+                    <text x="330" y="108" fill="#f8fafc" font-size="11" text-anchor="middle">Fuga Emocional</text>
+                    <text x="330" y="122" fill="#94a3b8" font-size="9" text-anchor="middle">(Redes / Telas)</text>
+
+                    <path d="M 400 110 L 450 110" stroke="#ef4444" stroke-width="3"/>
+
+                    <circle cx="510" cy="110" r="45" fill="none" stroke="#ef4444" stroke-width="4"/>
+                    <text x="510" y="108" fill="#f8fafc" font-size="11" text-anchor="middle">Culpa &</text>
+                    <text x="510" y="122" fill="#f8fafc" font-size="11" text-anchor="middle">Ansiedade</text>
+                </svg>
+                <div class="figure-caption">Figura 2.1: O ciclo vicioso da esquiva emocional e recompensa imediata.</div>
+            </div>
+
+            <h2 class="section-title">Estratégias de Combate ao Adiamento</h2>
+
+            <div class="grid-2">
+                <div class="card-inner">
+                    <h3 style="color: var(--accent-hover); margin-bottom: 0.5rem;">1. Regra dos 5 Minutos</h3>
+                    <p>Concorde em trabalhar na tarefa por apenas 5 minutos. Uma vez vencida a barreira inicial da inércia, a tendência neurobiológica é continuar em execução.</p>
+                </div>
+                <div class="card-inner">
+                    <h3 style="color: var(--accent-hover); margin-bottom: 0.5rem;">2. Técnica Pomodoro Adaptada</h3>
+                    <p>Trabalhe por 25 ou 45 minutos em hiperfoco absoluto e descanse 5 ou 10 minutos. Ajuste os blocos conforme o seu nível de tolerância mental.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Como Blindar Seu Ambiente Contra Distrações</h2>
+            <p>O foco não surge do esforço de vontade puro, mas do controle ambiental. Siga este protocolo básico:</p>
+            <ul style="color: var(--text-muted); line-height: 1.8; margin-left: 1.5rem;">
+                <li>Mantenha o celular longe do campo visual ou no modo "Não Perturbe".</li>
+                <li>Utilize extensões no navegador para bloquear sites nocivos durante blocos de estudo.</li>
+                <li>Mantenha apenas uma aba ou documento aberto na tela do computador.</li>
+            </ul>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Organizador de Rotinas | Ana Luiza Santini. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles;
+
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 70; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    z: Math.random() * width,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, width, height);
+            let cx = width / 2;
+            let cy = height / 2;
+            for (let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                p.z -= 0.8;
+                if (p.z <= 0) {
+                    p.z = width;
+                    p.x = Math.random() * width;
+                    p.y = Math.random() * height;
+                }
+                let k = 252 / p.z;
+                let px = (p.x - cx) * k + cx;
+                let py = (p.y - cy) * k + cy;
+                if (px >= 0 && px <= width && py >= 0 && py <= height) {
+                    let alpha = (1 - p.z / width);
+                    ctx.beginPath();
+                    ctx.arc(px, py, p.size * k, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(99, 102, 241, ${alpha})`;
+                    ctx.fill();
+                }
+            }
+            requestAnimationFrame(drawParticles);
+        }
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        drawParticles();
+    </script>
+</body>
+</html>

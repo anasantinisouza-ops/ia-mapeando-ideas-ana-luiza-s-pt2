@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esgotamento Físico e Mental - Organizador de Rotinas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .content-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-hover);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .btn-back:hover {
+            transform: translateX(-5px);
+        }
+        .figure-container {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #0d1322;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .figure-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .figure-caption {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+        }
+        .section-title {
+            color: var(--accent-hover);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        p {
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .health-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .health-table th, .health-table td {
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        .health-table th {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--text-main);
+        }
+        .health-table td {
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">&larr; Voltar ao Painel Principal</a>
+
+        <header class="header" style="text-align: left; margin-bottom: 1.5rem;">
+            <span class="badge">Aprofundamento Módulo 03</span>
+            <h1>Esgotamento <span class="highlight">Físico e Mental</span></h1>
+            <p>Gerencie seus níveis de energia para manter alta performance sem comprometer sua saúde integral.</p>
+        </header>
+
+        <main class="content-box">
+            <p>O esgotamento ou <em>Burnout</em> surge quando a taxa de gasto energético diário supera consistentemente a taxa de renovação e descanso. Sem a recuperação biológica adequada, os níveis de cortisol permanecem elevados, prejudicando diretamente a neuroplasticidade e a consolidação de memórias.</p>
+
+            <!-- FIGURA 3: BATERIA DE ENERGIA BIOLÓGICA -->
+            <div class="figure-container">
+                <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="600" height="180" fill="#0f172a" rx="10"/>
+                    <!-- Bateria -->
+                    <rect x="80" y="50" width="400" height="80" fill="none" stroke="#334155" stroke-width="4" rx="10"/>
+                    <rect x="480" y="70" width="20" height="40" fill="#334155" rx="4"/>
+                    <!-- Nível Crítico -->
+                    <rect x="90" y="60" width="80" height="60" fill="#ef4444" rx="6"/>
+                    <text x="280" y="100" fill="#f8fafc" font-size="14" text-anchor="middle" font-weight="bold">Bateria Biológica em Nível Crítico (20%)</text>
+                    <text x="280" y="120" fill="#94a3b8" font-size="11" text-anchor="middle">Risco alto de perda de retenção e baixa imunidade</text>
+                </svg>
+                <div class="figure-caption">Figura 3.1: Representação gráfica da perda de reservas físicas por ausência de higiene do sono e descanso.</div>
+            </div>
+
+            <h2 class="section-title">Pilares de Recuperação de Energia</h2>
+
+            <table class="health-table">
+                <thead>
+                    <tr>
+                        <th>Pilar</th>
+                        <th>Ação Recomendada</th>
+                        <th>Impacto Esperado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Higiene do Sono</strong></td>
+                        <td>Desligar telas de 30 a 60 min antes de dormir. Manter quarto escuro.</td>
+                        <td>Aumento do sono REM e fixação do aprendizado do dia.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Descanso Ativo</strong></td>
+                        <td>Caminhadas curtas ao ar livre sem fones de ouvido durante os intervalos.</td>
+                        <td>Redução nos níveis de estresse acumulado.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nutrição e Hidratação</strong></td>
+                        <td>Consumo regular de água e controle de ingestão de cafeína após as 15h.</td>
+                        <td>Estabilização do pico de energia sem crises de cansaço.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="section-title">Como Identificar os Sinais Alerta</h2>
+            <p>Fique atento a sintomas recorrentes como dores de cabeça frequentes, insônia mesmo estando exausto, irritabilidade excessiva com colegas e lentidão para raciocínios lógicos simples.</p>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Organizador de Rotinas | Ana Luiza Santini. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles;
+
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 70; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    z: Math.random() * width,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, width, height);
+            let cx = width / 2;
+            let cy = height / 2;
+            for (let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                p.z -= 0.8;
+                if (p.z <= 0) {
+                    p.z = width;
+                    p.x = Math.random() * width;
+                    p.y = Math.random() * height;
+                }
+                let k = 252 / p.z;
+                let px = (p.x - cx) * k + cx;
+                let py = (p.y - cy) * k + cy;
+                if (px >= 0 && px <= width && py >= 0 && py <= height) {
+                    let alpha = (1 - p.z / width);
+                    ctx.beginPath();
+                    ctx.arc(px, py, p.size * k, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(99, 102, 241, ${alpha})`;
+                    ctx.fill();
+                }
+            }
+            requestAnimationFrame(drawParticles);
+        }
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        drawParticles();
+    </script>
+</body>
+</html>

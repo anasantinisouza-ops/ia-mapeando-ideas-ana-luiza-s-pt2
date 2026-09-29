@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falta de Planejamento Claro - Organizador de Rotinas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .content-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-hover);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .btn-back:hover {
+            transform: translateX(-5px);
+        }
+        .figure-container {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #0d1322;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .figure-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .figure-caption {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+        }
+        .section-title {
+            color: var(--accent-hover);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        p {
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .eisenhower-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .eisen-box {
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .eisen-1 { background: rgba(239, 68, 68, 0.15); border-color: #ef4444; }
+        .eisen-2 { background: rgba(99, 102, 241, 0.15); border-color: #6366f1; }
+        .eisen-3 { background: rgba(245, 158, 11, 0.15); border-color: #f59e0b; }
+        .eisen-4 { background: rgba(148, 163, 184, 0.15); border-color: #94a3b8; }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">&larr; Voltar ao Painel Principal</a>
+
+        <header class="header" style="text-align: left; margin-bottom: 1.5rem;">
+            <span class="badge">Aprofundamento Módulo 04</span>
+            <h1>Falta de <span class="highlight">Planejamento Claro</span></h1>
+            <p>Construa clareza absoluta sobre suas tarefas e elimine a paralisia por falta de direção.</p>
+        </header>
+
+        <main class="content-box">
+            <p>Iniciar o dia sem ter exata ciência das atividades prioritárias drena a energia executiva. O tempo gasto hesitando sobre "o que fazer a seguir" consome o foco que deveria ser investido na produção real.</p>
+
+            <!-- FIGURA 4: MATRIZ DE EISENHOWER -->
+            <div class="figure-container">
+                <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="600" height="220" fill="#0f172a" rx="10"/>
+                    <line x1="300" y1="20" x2="300" y2="200" stroke="#334155" stroke-width="2"/>
+                    <line x1="20" y1="110" x2="580" y2="110" stroke="#334155" stroke-width="2"/>
+                    
+                    <text x="160" y="40" fill="#ef4444" font-weight="bold" font-size="12">1. URGENTE & IMPORTANTE</text>
+                    <text x="160" y="60" fill="#94a3b8" font-size="10">Fazer Imediatamente</text>
+
+                    <text x="440" y="40" fill="#818cf8" font-weight="bold" font-size="12">2. NÃO URGENTE / IMPORTANTE</text>
+                    <text x="440" y="60" fill="#94a3b8" font-size="10">Agendar (FOCO PRINCIPAL)</text>
+
+                    <text x="160" y="140" fill="#f59e0b" font-weight="bold" font-size="12">3. URGENTE / NÃO IMPORTANTE</text>
+                    <text x="160" y="160" fill="#94a3b8" font-size="10">Delegar / Automatizar</text>
+
+                    <text x="440" y="140" fill="#94a3b8" font-weight="bold" font-size="12">4. NÃO URGENTE / NÃO IMPORTANTE</text>
+                    <text x="440" y="160" fill="#94a3b8" font-size="10">Eliminar</text>
+                </svg>
+                <div class="figure-caption">Figura 4.1: Estrutura da Matriz de Eisenhower para categorização de demandas.</div>
+            </div>
+
+            <h2 class="section-title">Como Organizar o Planejamento Semanal</h2>
+            <p>Utilize a técnica de priorização visual dividindo suas obrigações no gráfico de quadrantes:</p>
+
+            <div class="eisenhower-grid">
+                <div class="eisen-box eisen-1">
+                    <h4 style="color: #ef4444;">Quadrante 1: Crises</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-main);">Provas do dia seguinte, entregas urgentes de trabalho com prazo estourando.</p>
+                </div>
+                <div class="eisen-box eisen-2">
+                    <h4 style="color: #818cf8;">Quadrante 2: Crescimento</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-main);">Estudo antecipado, revisões, projetos de longo prazo. A chave do sucesso fica aqui!</p>
+                </div>
+                <div class="eisen-box eisen-3">
+                    <h4 style="color: #f59e0b;">Quadrante 3: Interrupções</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-main);">E-mails genéricos, mensagens instantâneas e chamadas não agendadas.</p>
+                </div>
+                <div class="eisen-box eisen-4">
+                    <h4 style="color: #94a3b8;">Quadrante 4: Distrações</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-main);">Rolar feeds, navegação aleatória, reuniões desnecessárias sem pauta.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">A Ritualística do Planejamento Noturno</h2>
+            <p>Dedique 10 minutos todas as noites antes de encerrar seu dia de trabalho ou estudo para listar e selecionar exatamente as 3 tarefas cruciais da manhã seguinte. Isso reduz em 100% a ansiedade matinal.</p>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Organizador de Rotinas | Ana Luiza Santini. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles;
+
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < 70; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    z: Math.random() * width,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, width, height);
+            let cx = width / 2;
+            let cy = height / 2;
+            for (let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                p.z -= 0.8;
+                if (p.z <= 0) {
+                    p.z = width;
+                    p.x = Math.random() * width;
+                    p.y = Math.random() * height;
+                }
+                let k = 252 / p.z;
+                let px = (p.x - cx) * k + cx;
+                let py = (p.y - cy) * k + cy;
+                if (px >= 0 && px <= width && py >= 0 && py <= height) {
+                    let alpha = (1 - p.z / width);
+                    ctx.beginPath();
+                    ctx.arc(px, py, p.size * k, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(99, 102, 241, ${alpha})`;
+                    ctx.fill();
+                }
+            }
+            requestAnimationFrame(drawParticles);
+        }
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        drawParticles();
+    </script>
+</body>
+</html>
